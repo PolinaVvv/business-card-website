@@ -7,6 +7,8 @@ import {
   Stack,
   Center,
 } from '@chakra-ui/react'
+
+// Fonts
 import '@fontsource/montserrat/400.css'
 
 function App() {
