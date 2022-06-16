@@ -8,7 +8,6 @@ import {
   Text,
   HStack,
 } from '@chakra-ui/react'
-import './App.css'
 import legsAndFire from '../assets/imgs/legs_and_fire2.jpg'
 import '@fontsource/montserrat/400.css'
 
