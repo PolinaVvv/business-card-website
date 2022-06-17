@@ -36,7 +36,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route
-          path='/'
+          path='/business-card-website'
           element={
             <ChakraProvider theme={theme}>
               <App />
