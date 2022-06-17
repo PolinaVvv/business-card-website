@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // Screens
 import App from './screens/App'
-import Home from './screens/Home'
+// import Home from './screens/Home'
 import NotFound from './screens/NotFound'
 
 // Imgs
