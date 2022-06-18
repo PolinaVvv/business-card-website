@@ -12,7 +12,7 @@ import {
 
 // Fonts
 import '@fontsource/montserrat/400.css'
-import Menu from '../components/menu'
+// import Menu from '../components/menu'
 
 // Imgs
 import legsAndFire from '../assets/imgs/legs_and_fire2.jpg'
@@ -20,7 +20,7 @@ import danya from '../assets/imgs/danya2.png'
 import girl from '../assets/imgs/girl2.png'
 
 function App() {
-  const textMenu = ['О фотографе', 'Портфолио', 'Отзывы', 'Цены', 'Контакты']
+  // const textMenu = ['О фотографе', 'Портфолио', 'Отзывы', 'Цены', 'Контакты']
   return (
     <div>
       <Flex
