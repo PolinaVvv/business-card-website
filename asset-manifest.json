@@ -1,10 +1,14 @@
 {
   "files": {
     "main.css": "/business-card-website/static/css/main.f561b87e.css",
-    "main.js": "/business-card-website/static/js/main.7e7c0ff3.js",
+    "main.js": "/business-card-website/static/js/main.09b196b7.js",
     "static/media/girl2.png": "/business-card-website/static/media/girl2.5b24b1d37f3e25c6bf64.png",
+    "static/media/church3.jpg": "/business-card-website/static/media/church3.b55b1c3db632e52ebfee.jpg",
+    "static/media/polina.png": "/business-card-website/static/media/polina.e13f9f81b01ecacc2f69.png",
+    "static/media/kirya_camera.jpg": "/business-card-website/static/media/kirya_camera.ca4e3f92b2cf83e84b36.jpg",
     "static/media/danya2.png": "/business-card-website/static/media/danya2.8b713b97a0b76dca0f6c.png",
     "static/media/legs_and_fire2.jpg": "/business-card-website/static/media/legs_and_fire2.ebb84bd7d6dc4f2bac37.jpg",
+    "static/media/mayakovskaya.jpg": "/business-card-website/static/media/mayakovskaya.3f52e1bc8ea5c900a7f2.jpg",
     "static/media/montserrat-all-400-normal.woff": "/business-card-website/static/media/montserrat-all-400-normal.aa917f2f47304e192c88.woff",
     "static/media/montserrat-latin-400-normal.woff2": "/business-card-website/static/media/montserrat-latin-400-normal.f2d2ef7bf6fc24bddc8f.woff2",
     "static/media/montserrat-latin-ext-400-normal.woff2": "/business-card-website/static/media/montserrat-latin-ext-400-normal.75ba6196d4ce0a73d699.woff2",
@@ -13,10 +17,10 @@
     "static/media/montserrat-vietnamese-400-normal.woff2": "/business-card-website/static/media/montserrat-vietnamese-400-normal.69611381dc5e4dd3b448.woff2",
     "index.html": "/business-card-website/index.html",
     "main.f561b87e.css.map": "/business-card-website/static/css/main.f561b87e.css.map",
-    "main.7e7c0ff3.js.map": "/business-card-website/static/js/main.7e7c0ff3.js.map"
+    "main.09b196b7.js.map": "/business-card-website/static/js/main.09b196b7.js.map"
   },
   "entrypoints": [
     "static/css/main.f561b87e.css",
-    "static/js/main.7e7c0ff3.js"
+    "static/js/main.09b196b7.js"
   ]
 }
