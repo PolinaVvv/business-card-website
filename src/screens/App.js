@@ -8,9 +8,6 @@ import {
   Text,
   Image,
   Box,
-  Container,
-  Grid,
-  GridItem,
 } from '@chakra-ui/react'
 
 // Fonts
