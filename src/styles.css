@@ -2,3 +2,8 @@
   background-color: rgba(202, 200, 185, 1) !important;
   height: 100%;
 } */
+.container {
+  position: relative;
+
+  background-color: rgba(202, 200, 185, 1) !important;
+}

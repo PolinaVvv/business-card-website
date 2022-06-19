@@ -8,6 +8,9 @@ import {
   Text,
   Image,
   Box,
+  Container,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react'
 
 // Fonts
@@ -18,6 +21,10 @@ import '@fontsource/montserrat/400.css'
 import legsAndFire from '../assets/imgs/legs_and_fire2.jpg'
 import danya from '../assets/imgs/danya2.png'
 import girl from '../assets/imgs/girl2.png'
+import church3 from '../assets/imgs/church3.jpg'
+import polina from '../assets/imgs/polina.png'
+import mayakovskaya from '../assets/imgs/mayakovskaya.jpg'
+import kiryaCamera from '../assets/imgs/kirya_camera.jpg'
 
 function App() {
   // const textMenu = ['О фотографе', 'Портфолио', 'Отзывы', 'Цены', 'Контакты']
@@ -111,6 +118,8 @@ function App() {
         backgroundColor='rgba(202, 200, 185, 1)'
         px={{ base: '1em', lg: '5em' }} // заполнение встроенного начала + заполнение встроенного конца
         direction='column' // расставляет в столбец эл флекса
+        minH='100vh'
+        maxW='100vw'
       >
         <Stack
           direction={{ base: 'column', lg: 'row' }}
@@ -145,13 +154,13 @@ function App() {
         </Stack>
         <Stack
           direction={{ base: 'column', lg: 'row' }}
-          // pt={{ lg: '1em' }} // обивка Верх
           spacing={{ base: '1em', lg: '1em' }} // интервал между к-либо элементами
           align='start' // как элементы располагаются вдоль поперечной оси на текущей строке
         >
           <Box
             boxSize={{ base: 'xxs', lg: 'xl' }}
             mt={{ base: '1em', lg: '1em' }}
+            // mb={{ lg: '1em' }}
             flex='4'
           >
             <Image src={danya} />
@@ -194,20 +203,53 @@ function App() {
         backgroundSize='cover'
         backgroundPosition={{ base: '50% ', lg: 'top' }}
       >
-        <Stack paddingLeft='0.5em'>
-          <Heading
-            marginTop={{ base: '8em', lg: '12.9em' }} // поля сверху
-            fontWeight='700'
-            size={{ base: 'xl', lg: '4xl' }}
-            textAlign='top' // как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента
-            color='rgba(202, 200, 185, 1)'
-          >
-            Моё <br />
-            портфолио
-          </Heading>
-          <Spacer />
-        </Stack>
+        {/* <Stack paddingLeft='0.5em'> */}
+        <Heading
+          paddingLeft='0.5em'
+          marginTop={{ base: '8em', lg: '12.9em' }} // поля сверху
+          fontWeight='700'
+          size={{ base: 'xl', lg: '4xl' }}
+          textAlign='top' // как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента
+          color='rgba(202, 200, 185, 1)'
+          marginBottom={{ base: '5em', lg: '8em' }}
+        >
+          Моё <br />
+          портфолио
+        </Heading>
+        <Spacer />
       </Flex>
+      <Stack
+        minH='100vh'
+        maxW='100vw'
+        backgroundColor='rgba(202, 200, 185, 1)'
+        direction='row' // расставляет в ... эл флекса
+        px={{ base: '1em', lg: '10em' }} // заполнение встроенного начала + заполнение встроенного конца
+        spacing={{ base: '0.2em', lg: '0.5em' }} // интервал между к-либо элементами
+        // align='top'
+      >
+        <Box boxSize={{ base: '180px', lg: 'sm' }}>
+          <Image src={polina} />
+        </Box>
+        <Box boxSize={{ base: '250px', lg: '3xl' }}>
+          <Image src={church3} />
+        </Box>
+        <Box
+          boxSize={{ base: '200px', lg: '3xl' }}
+          position='absolute'
+          bottom={{ base: '-90px', lg: '-585px' }}
+          left={{ base: '13px', lg: '152px' }}
+        >
+          <Image src={mayakovskaya} />
+        </Box>
+        <Box
+          boxSize={{ base: '166px', lg: '2xl' }}
+          position='absolute'
+          bottom={{ base: '13px', lg: '-425px' }}
+          left={{ base: '135px', lg: '640px' }}
+        >
+          <Image src={kiryaCamera} />
+        </Box>
+      </Stack>
     </div>
   )
 }
