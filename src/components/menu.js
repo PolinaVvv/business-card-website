@@ -1,5 +1,17 @@
-import { Text } from '@chakra-ui/react'
+import { Link } from 'react-scroll'
 
-export default function Menu({ text }) {
-  return <Text>{text}</Text>
+export default function Menu({ link, text }) {
+  return (
+    <li style={{ cursor: 'pointer', listStyleType: 'none' }}>
+      <Link
+        activeClass='active'
+        to={link}
+        spy={true} //выделение Link при достижении целевой позиции scroll
+        smooth={true} //анимация прокрутки
+        duration={500} //время анимации прокрутки
+      >
+        {text}
+      </Link>
+    </li>
+  )
 }

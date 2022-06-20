@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // Screens
 import App from './screens/App'
-// import Home from './screens/Home'
+import Test from './screens/Test'
 import NotFound from './screens/NotFound'
 
 // Imgs
@@ -40,6 +40,14 @@ root.render(
           element={
             <ChakraProvider theme={theme}>
               <App />
+            </ChakraProvider>
+          }
+        />
+        <Route
+          path='/Test'
+          element={
+            <ChakraProvider>
+              <Test />
             </ChakraProvider>
           }
         />

@@ -9,24 +9,82 @@ import {
   Image,
   Box,
 } from '@chakra-ui/react'
+import { Carousel } from 'react-carousel-minimal'
+// import { Link, animateScroll as scroll } from 'react-scroll'
 
 // Fonts
 import '@fontsource/montserrat/400.css'
-// import Menu from '../components/menu'
+import Menu from '../components/Menu'
 
 // Imgs
 import legsAndFire from '../assets/imgs/legs_and_fire2.jpg'
 import danya from '../assets/imgs/danya2.png'
-import girl from '../assets/imgs/girl2.png'
-import church3 from '../assets/imgs/church3.jpg'
+// import girl from '../assets/imgs/girl2.png'
+// import church3 from '../assets/imgs/church3.jpg'
 import polina from '../assets/imgs/polina.png'
-import mayakovskaya from '../assets/imgs/mayakovskaya.jpg'
+// import mayakovskaya from '../assets/imgs/mayakovskaya.jpg'
 import kiryaCamera from '../assets/imgs/kirya_camera.jpg'
+import dron from '../assets/imgs/dron.jpg'
+// import sos from '../assets/imgs/sos.jpg'
+import retro from '../assets/imgs/retro.jpg'
+import kiryaSmoke from '../assets/imgs/kirya_smoke.jpg'
+import saypink from '../assets/imgs/saypink.jpg'
+import church1 from '../assets/imgs/church1.jpg'
+import church2 from '../assets/imgs/church2.jpg'
+import dust from '../assets/imgs/dust.jpg'
+// import elka from '../assets/imgs/elka.jpg'
+import kiryaSits from '../assets/imgs/kirya_sits.jpg'
+// import kiryaStands from '../assets/imgs/kirya_stands.jpg'
+import kirya from '../assets/imgs/kirya.jpg'
+// import metroChb from '../assets/imgs/metro_chb.jpg'
+// import trainCoolColors from '../assets/imgs/train_cool_colors.jpg'
+import vasim from '../assets/imgs/vasim.jpg'
 
 function App() {
-  // const textMenu = ['О фотографе', 'Портфолио', 'Отзывы', 'Цены', 'Контакты']
+  const textMenu = [
+    { text: 'О фотографе', link: 'aboutMe' },
+    { text: 'Портфолио', link: 'portfolio' },
+    { text: 'Отзывы', link: 'aboutMe' },
+    { text: 'Цены', link: 'aboutMe' },
+    { text: 'Контакты', link: 'aboutMe' },
+  ]
+  const data = [
+    { image: polina },
+    { image: dust },
+    { image: dron },
+    { image: church2 },
+    { image: vasim },
+    { image: church1 },
+    { image: retro },
+    { image: kiryaCamera },
+    { image: kiryaSmoke },
+    { image: saypink },
+    { image: kiryaSits },
+    { image: kirya },
+    // { image: sos },
+    // { image: church3 },
+    // { image: elka },
+    // { image: kiryaStands },
+    // { image: metroChb },
+    // { image: trainCoolColors },
+    // { image: mayakovskaya },
+    // { image: sos, caption: 'надпись',},
+  ]
+  // const captionStyle = {
+  //   fontSize: '2em',
+  //   fontWeight: '200',
+  // }
+  const slideNumberStyle = {
+    fontSize: '1.5em',
+    fontWeight: '200',
+    color: 'rgba(202, 200, 185, 1)',
+  }
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: 'rgba(202, 200, 185, 1)',
+      }}
+    >
       <Flex
         direction='column' // расставляет в столбец эл флекса
         minH='100vh' // устанавливает минимальную высоту элемента
@@ -59,14 +117,12 @@ function App() {
             spacing={{ base: '0.1em', lg: '3.4em' }}
             fontSize={{ base: 'xl', lg: '2xl' }}
           >
-            {/* {textMenu.map((e) => (
-              <Menu text={e} />
-            ))} */}
-            <Text fontSize='2xl'>О фотографе</Text>
-            <Text fontSize='2xl'>Портфолио</Text>
-            <Text fontSize='2xl'>Отзывы</Text>
-            <Text fontSize='2xl'>Цены</Text>
-            <Text fontSize='2xl'>Контакты</Text>
+            {textMenu.map((e) => (
+              <Menu link={e.link} key={e} text={e.text} />
+            ))}
+            {/* <a href='#aboutMe'>
+              О фотографе
+            </a> */}
           </Stack>
         </Stack>
         <Stack
@@ -112,11 +168,13 @@ function App() {
         <Spacer />
       </Flex>
       <Flex
-        backgroundColor='rgba(202, 200, 185, 1)'
+        id='aboutMe'
+        // backgroundColor='rgba(202, 200, 185, 1)'
         px={{ base: '1em', lg: '5em' }} // заполнение встроенного начала + заполнение встроенного конца
         direction='column' // расставляет в столбец эл флекса
         minH='100vh'
         maxW='100vw'
+        pb='3em'
       >
         <Stack
           direction={{ base: 'column', lg: 'row' }}
@@ -180,7 +238,9 @@ function App() {
             <Text as='u' textAlign='left' pl={{ base: '6em', lg: '15em' }}>
               За что я люблю фотографии?{' '}
             </Text>
-            <Text pb={{ base: '2em' }}>
+            <Text
+            // pb={{ base: '2em' }}
+            >
               Фотография - это раскрытие своего творческого потенциала, душевных
               переживаний и эмоций в конкретный момент времени. Также она
               является зеркалом, отражающим всё то, что бережно хранится в
@@ -189,62 +249,58 @@ function App() {
           </Stack>
         </Stack>
       </Flex>
-      <Flex
-        backgroundColor='rgba(202, 200, 185, 1)'
-        direction='column' // расставляет в столбец эл флекса
+
+      <Stack
+        direction={{ base: 'column', lg: 'row' }}
+        id='portfolio'
         minH='100vh' // устанавливает минимальную высоту элемента
         maxW='100vw' // Устанавливает ширину содержимого элемента
         px={{ base: '1em', lg: '5em' }} // заполнение встроенного начала + заполнение встроенного конца
-        backgroundImage={girl}
-        backgroundRepeat='no-repeat'
-        backgroundSize='cover'
-        backgroundPosition={{ base: '50% ', lg: 'top' }}
+        backgroundColor='rgb(48,42,38)'
+        align='center'
       >
-        {/* <Stack paddingLeft='0.5em'> */}
         <Heading
           paddingLeft='0.5em'
-          marginTop={{ base: '8em', lg: '12.9em' }} // поля сверху
+          // marginTop={{ base: '8em', lg: '12.9em' }} // поля сверху
           fontWeight='700'
           size={{ base: 'xl', lg: '4xl' }}
-          textAlign='top' // как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента
+          // textAlign='top' // как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента
           color='rgba(202, 200, 185, 1)'
-          marginBottom={{ base: '5em', lg: '8em' }}
+          mr={{ lg: '1em' }}
         >
-          Моё <br />
-          портфолио
+          Моё портфолио
         </Heading>
-        <Spacer />
-      </Flex>
-      <Stack
-        minH='100vh'
-        maxW='100vw'
-        backgroundColor='rgba(202, 200, 185, 1)'
-        direction='row' // расставляет в ... эл флекса
-        px={{ base: '1em', lg: '10em' }} // заполнение встроенного начала + заполнение встроенного конца
-        spacing={{ base: '0.2em', lg: '0.5em' }} // интервал между к-либо элементами
-        // align='top'
-      >
-        <Box boxSize={{ base: '180px', lg: 'sm' }}>
-          <Image src={polina} />
-        </Box>
-        <Box boxSize={{ base: '250px', lg: '3xl' }}>
-          <Image src={church3} />
-        </Box>
         <Box
-          boxSize={{ base: '200px', lg: '3xl' }}
-          position='absolute'
-          bottom={{ base: '-90px', lg: '-585px' }}
-          left={{ base: '13px', lg: '152px' }}
+          // paddingX='2em'
+          // align='center'
+          outline='thick double rgba(202, 200, 185, 1);' /* Чёрная рамка */
+          // border='1px' /* Белая рамка */
         >
-          <Image src={mayakovskaya} />
-        </Box>
-        <Box
-          boxSize={{ base: '166px', lg: '2xl' }}
-          position='absolute'
-          bottom={{ base: '13px', lg: '-425px' }}
-          left={{ base: '135px', lg: '640px' }}
-        >
-          <Image src={kiryaCamera} />
+          <Carousel
+            data={data}
+            time={20000}
+            width='600px'
+            height='600px'
+            // captionStyle={captionStyle}
+            // radius='10px'
+            slideNumber={true}
+            slideNumberStyle={slideNumberStyle}
+            // captionPosition='bottom'
+            automatic={true}
+            dots={true} // индикаторы внизу картинок (точки)
+            pauseIconColor='white'
+            pauseIconSize='40px'
+            slideBackgroundColor='rgba(202, 200, 185, 1)'
+            slideImageFit='cover' //Устанавливает «подгонку объекта» изображения слайдов,доступные варианты «cover» и «contain»
+            // thumbnails={true} //Включает индикаторы эскизов
+            // thumbnailWidth='100px' //Ширина миниатюры, по умолчанию 100 пикселей.
+            style={{
+              textAlign: 'center',
+              maxWidth: '90vw',
+              maxHeight: '5000px',
+              margin: '40px auto',
+            }}
+          ></Carousel>
         </Box>
       </Stack>
     </div>
