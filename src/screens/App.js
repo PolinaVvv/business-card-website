@@ -14,7 +14,7 @@ import { Carousel } from 'react-carousel-minimal'
 
 // Fonts
 import '@fontsource/montserrat/400.css'
-import Menu from '../components/Menu'
+import Menu from '../components/Menu.js'
 
 // Imgs
 import legsAndFire from '../assets/imgs/legs_and_fire2.jpg'
@@ -264,16 +264,17 @@ function App() {
           // marginTop={{ base: '8em', lg: '12.9em' }} // поля сверху
           fontWeight='700'
           size={{ base: 'xl', lg: '4xl' }}
-          // textAlign='top' // как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента
+          // textAlign='center' // как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента
           color='rgba(202, 200, 185, 1)'
           mr={{ lg: '1em' }}
         >
           Моё портфолио
         </Heading>
-        <Box
+        <Flex
+          // Box
           // paddingX='2em'
-          // align='center'
-          outline='thick double rgba(202, 200, 185, 1);' /* Чёрная рамка */
+          align='center'
+          // outline='thick double rgba(202, 200, 185, 1);' /* Чёрная рамка */
           // border='1px' /* Белая рамка */
         >
           <Carousel
@@ -301,7 +302,7 @@ function App() {
               margin: '40px auto',
             }}
           ></Carousel>
-        </Box>
+        </Flex>
       </Stack>
     </div>
   )
