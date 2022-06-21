@@ -16,8 +16,8 @@ import { HamburgerIcon, TriangleUpIcon } from '@chakra-ui/icons'
 import { useRef } from 'react'
 
 // Componet
-import Menu from '../components/Menu'
 import MenuDrawer from '../components/MenuDrawer'
+import Menu from '../components/Menu'
 
 // Fonts
 import '@fontsource/montserrat/400.css'
