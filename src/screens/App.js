@@ -8,37 +8,37 @@ import {
   Text,
   Image,
   Box,
+  IconButton,
+  useDisclosure,
 } from '@chakra-ui/react'
 import { Carousel } from 'react-carousel-minimal'
-// import { Link, animateScroll as scroll } from 'react-scroll'
+import { HamburgerIcon, TriangleUpIcon } from '@chakra-ui/icons'
+import { useRef } from 'react'
+
+// Componet
+import Menu from '../components/Menu'
+import MenuDrawer from '../components/MenuDrawer'
 
 // Fonts
 import '@fontsource/montserrat/400.css'
-import Menu from '../components/Menu.js'
 
 // Imgs
 import legsAndFire from '../assets/imgs/legs_and_fire2.jpg'
 import danya from '../assets/imgs/danya2.png'
-// import girl from '../assets/imgs/girl2.png'
-// import church3 from '../assets/imgs/church3.jpg'
+import girl from '../assets/imgs/girl2.jpg'
 import polina from '../assets/imgs/polina.png'
-// import mayakovskaya from '../assets/imgs/mayakovskaya.jpg'
 import kiryaCamera from '../assets/imgs/kirya_camera.jpg'
 import dron from '../assets/imgs/dron.jpg'
-// import sos from '../assets/imgs/sos.jpg'
 import retro from '../assets/imgs/retro.jpg'
 import kiryaSmoke from '../assets/imgs/kirya_smoke.jpg'
 import saypink from '../assets/imgs/saypink.jpg'
 import church1 from '../assets/imgs/church1.jpg'
 import church2 from '../assets/imgs/church2.jpg'
 import dust from '../assets/imgs/dust.jpg'
-// import elka from '../assets/imgs/elka.jpg'
 import kiryaSits from '../assets/imgs/kirya_sits.jpg'
-// import kiryaStands from '../assets/imgs/kirya_stands.jpg'
-import kirya from '../assets/imgs/kirya.jpg'
-// import metroChb from '../assets/imgs/metro_chb.jpg'
-// import trainCoolColors from '../assets/imgs/train_cool_colors.jpg'
 import vasim from '../assets/imgs/vasim.jpg'
+import polina2 from '../assets/imgs/bulochka_sidit_ustavshaya_pod_pledikom.jpg'
+import kirya from '../assets/imgs/kirya.jpg'
 
 function App() {
   const textMenu = [
@@ -49,26 +49,19 @@ function App() {
     { text: 'Контакты', link: 'aboutMe' },
   ]
   const data = [
-    { image: polina },
-    { image: dust },
-    { image: dron },
-    { image: church2 },
-    { image: vasim },
-    { image: church1 },
+    { image: kiryaSmoke },
     { image: retro },
     { image: kiryaCamera },
-    { image: kiryaSmoke },
     { image: saypink },
     { image: kiryaSits },
-    { image: kirya },
-    // { image: sos },
-    // { image: church3 },
-    // { image: elka },
-    // { image: kiryaStands },
-    // { image: metroChb },
-    // { image: trainCoolColors },
-    // { image: mayakovskaya },
-    // { image: sos, caption: 'надпись',},
+    { image: dust },
+    { image: polina },
+    { image: church2 },
+    { image: dron },
+    { image: church1 },
+    { image: polina2 },
+    { image: vasim },
+    { image: girl },
   ]
   // const captionStyle = {
   //   fontSize: '2em',
@@ -79,6 +72,11 @@ function App() {
     fontWeight: '200',
     color: 'rgba(202, 200, 185, 1)',
   }
+  // получаем с помощью onOpen, onClose статус компонента и с помощью isOpen (bool) переводим в открытое или закрытое состояние
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  // позволяет сохранить некоторый объект, который можно можно изменять и который хранится в течение всей жизни компонента
+  const btnRef = useRef()
+
   return (
     <div
       style={{
@@ -86,6 +84,7 @@ function App() {
       }}
     >
       <Flex
+        id='start'
         direction='column' // расставляет в столбец эл флекса
         minH='100vh' // устанавливает минимальную высоту элемента
         maxW='100vw' // Устанавливает ширину содержимого элемента
@@ -95,6 +94,21 @@ function App() {
         backgroundSize='cover'
         backgroundPosition={{ base: '27% ', lg: 'top' }}
       >
+        <IconButton
+          as='a'
+          position='fixed'
+          bottom={{ base: '0', lg: '3' }}
+          right={{ base: '0', lg: '3' }}
+          variant='ghost'
+          icon={
+            <TriangleUpIcon
+              boxSize={{ base: '1.5em', lg: '2em' }}
+              color='rgb(82 58 55)'
+            />
+          }
+          size='lg'
+          href='#start'
+        />
         <Stack
           direction={{ base: 'column', lg: 'row' }}
           flex='1'
@@ -103,26 +117,46 @@ function App() {
           spacing={{ base: '2em', lg: '2em' }} // интервал между к-либо элементами
           justifyContent={{ base: 'normal', lg: 'space-between' }} //определяет, как браузер распределяет пространство между и вокруг элементов контента вдоль главной оси flex контейнера, или вдоль строчной оси grid контейнера
         >
-          <Heading
-            marginTop={{ base: '1em', lg: '0.1em' }} // поля сверху
-            fontWeight='800'
-            size='2xl'
-            textAlign={{ base: 'center' }} // как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента
-          >
-            @naitiphoto
-          </Heading>
           <Stack
-            direction={{ base: 'column', lg: 'row' }}
+            direction='row'
+            spacing='1em' // интервал между к-либо элементами
+            marginTop={{ base: '1.5em', lg: '0.1em' }} // поля сверху
+            align={{ base: 'center', lg: 'normal' }}
+          >
+            <Heading
+              as='a'
+              target='_blank'
+              href='https://instagram.com/naitiphoto?igshid=YmMyMTA2M2Y='
+              fontWeight='500'
+              size={{ base: 'xl', lg: '2xl' }}
+              textAlign={{ base: 'left' }} // как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента
+            >
+              @naitiphoto
+            </Heading>
+            <Spacer />
+            <MenuDrawer isDrawerOpen={isOpen} onDrawerClose={onClose} />
+            <IconButton
+              display={{ base: 'contents', lg: 'none' }}
+              variant='ghost'
+              icon={
+                <HamburgerIcon boxSize='1.5em' color='rgba(202, 200, 185, 1)' />
+              }
+              colorScheme='pink'
+              size='lg'
+              ref={btnRef}
+              onClick={onOpen}
+            />
+          </Stack>
+          <Stack
+            direction='row'
             fontWeight='300'
-            spacing={{ base: '0.1em', lg: '3.4em' }}
-            fontSize={{ base: 'xl', lg: '2xl' }}
+            spacing='0em'
+            fontSize='2xl'
+            display={{ base: 'none', lg: 'contents' }}
           >
             {textMenu.map((e) => (
               <Menu link={e.link} key={e} text={e.text} />
             ))}
-            {/* <a href='#aboutMe'>
-              О фотографе
-            </a> */}
           </Stack>
         </Stack>
         <Stack
@@ -132,7 +166,7 @@ function App() {
           spacing={{ base: '1em', lg: '0.5em' }} // интервал между к-либо элементами
           flex='1'
         >
-          <Center flex='1' marginTop={{ lg: '4em' }} paddingLeft={{ lg: 'em' }}>
+          <Center flex='1' marginTop={{ lg: '4em' }}>
             <Button
               colorScheme='orange' // цвет при тыке
               variant='outline'
@@ -160,7 +194,7 @@ function App() {
             lineHeight='1.2' // величина пространства между строками
             size='2xl'
           >
-            В поисках фотографии <br /> я нахожу нечто более прекрасное, чем{' '}
+            В поисках фотографии <br /> я нахожу нечто более прекрасное, чем
             <br />
             просто мир
           </Heading>
@@ -169,12 +203,15 @@ function App() {
       </Flex>
       <Flex
         id='aboutMe'
-        // backgroundColor='rgba(202, 200, 185, 1)'
         px={{ base: '1em', lg: '5em' }} // заполнение встроенного начала + заполнение встроенного конца
         direction='column' // расставляет в столбец эл флекса
         minH='100vh'
         maxW='100vw'
         pb='3em'
+        style={{
+          background:
+            'linear-gradient(rgba(202, 200, 185, 1)70%, rgb(48,42,38)  )',
+        }}
       >
         <Stack
           direction={{ base: 'column', lg: 'row' }}
@@ -182,13 +219,13 @@ function App() {
           pt={{ lg: '2em' }} // обивка Верх
           spacing={{ base: '0.5em', lg: '1em' }} // интервал между к-либо элементами
           align='end' // как элементы располагаются вдоль поперечной оси на текущей строке
+          color='rgb(48 42 38)'
         >
           <Heading
             marginTop={{ base: '1em', lg: '0.1em' }} // поля сверху
             fontWeight='700'
             size='2xl'
             textAlign='center' // как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента
-            color='rgba(0, 0, 0, 1)'
             flex='2'
             pr={{ base: '1.7em', lg: '0em' }}
             paddingBottom={{ lg: '0.5em' }}
@@ -198,7 +235,6 @@ function App() {
           <Spacer />
 
           <Text
-            color='rgba(0, 0, 0, 1)'
             fontSize={{ base: 'xl', lg: '3xl' }}
             fontWeight='700'
             flex='4'
@@ -215,7 +251,6 @@ function App() {
           <Box
             boxSize={{ base: 'xxs', lg: 'xl' }}
             mt={{ base: '1em', lg: '1em' }}
-            // mb={{ lg: '1em' }}
             flex='4'
           >
             <Image src={danya} />
@@ -223,10 +258,10 @@ function App() {
           <Stack
             direction={{ base: 'column', lg: 'column' }}
             spacing={{ base: '1em', lg: '1.2em' }} // интервал между к-либо элементами
-            color='rgba(48, 42, 38, 1)'
-            fontSize={{ base: 'xs', lg: 'xl' }}
+            fontSize={{ base: 'md', lg: 'xl' }}
             fontWeight='500'
             flex='5'
+            color='rgb(48 42 38)'
           >
             <Text mt={{ lg: '3em' }}>
               Профессионально занимаюсь фотографией более 3-х лет.
@@ -235,11 +270,15 @@ function App() {
               <u>Индивидуальный подход </u>к каждому - это не только отличные
               фотографии, но и полученные от встречи эмоции!
             </Text>
-            <Text as='u' textAlign='left' pl={{ base: '6em', lg: '15em' }}>
+
+            <Text as='u' textAlign='left' pl={{ base: '2em', lg: '15em' }}>
               За что я люблю фотографии?{' '}
             </Text>
             <Text
-            // pb={{ base: '2em' }}
+              color={{
+                base: 'rgba(202, 200, 185, 1)',
+                lg: 'rgb(48, 42, 38)',
+              }}
             >
               Фотография - это раскрытие своего творческого потенциала, душевных
               переживаний и эмоций в конкретный момент времени. Также она
@@ -261,48 +300,38 @@ function App() {
       >
         <Heading
           paddingLeft='0.5em'
-          // marginTop={{ base: '8em', lg: '12.9em' }} // поля сверху
           fontWeight='700'
           size={{ base: 'xl', lg: '4xl' }}
-          // textAlign='center' // как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента
           color='rgba(202, 200, 185, 1)'
           mr={{ lg: '1em' }}
         >
           Моё портфолио
         </Heading>
-        <Flex
-          // Box
-          // paddingX='2em'
-          align='center'
-          // outline='thick double rgba(202, 200, 185, 1);' /* Чёрная рамка */
-          // border='1px' /* Белая рамка */
-        >
-          <Carousel
-            data={data}
-            time={20000}
-            width='600px'
-            height='600px'
-            // captionStyle={captionStyle}
-            // radius='10px'
-            slideNumber={true}
-            slideNumberStyle={slideNumberStyle}
-            // captionPosition='bottom'
-            automatic={true}
-            dots={true} // индикаторы внизу картинок (точки)
-            pauseIconColor='white'
-            pauseIconSize='40px'
-            slideBackgroundColor='rgba(202, 200, 185, 1)'
-            slideImageFit='cover' //Устанавливает «подгонку объекта» изображения слайдов,доступные варианты «cover» и «contain»
-            // thumbnails={true} //Включает индикаторы эскизов
-            // thumbnailWidth='100px' //Ширина миниатюры, по умолчанию 100 пикселей.
-            style={{
-              textAlign: 'center',
-              maxWidth: '90vw',
-              maxHeight: '5000px',
-              margin: '40px auto',
-            }}
-          ></Carousel>
-        </Flex>
+        <Carousel
+          data={data}
+          time={20000}
+          width='600px'
+          height='600px'
+          // captionStyle={captionStyle}
+          // radius='10px'
+          slideNumber={true}
+          slideNumberStyle={slideNumberStyle}
+          // captionPosition='bottom'
+          automatic={true}
+          dots={true} // индикаторы внизу картинок (точки)
+          pauseIconColor='white'
+          pauseIconSize='40px'
+          slideBackgroundColor='rgba(202, 200, 185, 1)'
+          slideImageFit='cover' //Устанавливает «подгонку объекта» изображения слайдов,доступные варианты «cover» и «contain»
+          // thumbnails={true} //Включает индикаторы эскизов
+          // thumbnailWidth='100px' //Ширина миниатюры, по умолчанию 100 пикселей.
+          style={{
+            textAlign: 'center',
+            maxWidth: '90vw',
+            maxHeight: '5000px',
+            margin: '40px auto',
+          }}
+        ></Carousel>
       </Stack>
     </div>
   )

@@ -6,7 +6,7 @@ export default function Menu({ link, text }) {
       <Link
         activeClass='active'
         to={link}
-        spy={true} //выделение Link при достижении целевой позиции scroll
+        // spy={true} //выделение Link при достижении целевой позиции scroll
         smooth={true} //анимация прокрутки
         duration={500} //время анимации прокрутки
       >
