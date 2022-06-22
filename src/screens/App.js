@@ -38,13 +38,13 @@ import dust from '../assets/imgs/dust.jpg'
 import kiryaSits from '../assets/imgs/kirya_sits.jpg'
 import vasim from '../assets/imgs/vasim.jpg'
 import polina2 from '../assets/imgs/bulochka_sidit_ustavshaya_pod_pledikom.jpg'
-// import kirya from '../assets/imgs/kirya.jpg'
+import kirya from '../assets/imgs/kirya.jpg'
 
 function App() {
   const textMenu = [
     { text: 'О фотографе', link: 'aboutMe' },
     { text: 'Портфолио', link: 'portfolio' },
-    { text: 'Отзывы', link: 'aboutMe' },
+    { text: 'Отзывы', link: 'reviews' },
     { text: 'Цены', link: 'aboutMe' },
     { text: 'Контакты', link: 'aboutMe' },
   ]
@@ -275,10 +275,11 @@ function App() {
               За что я люблю фотографии?{' '}
             </Text>
             <Text
-            // color={{
-            //   base: 'rgba(202, 200, 185, 1)',
-            //   lg: 'rgb(48, 42, 38)',
-            // }}
+              pb={{ base: '4em' }}
+              // color={{
+              //   base: 'rgba(202, 200, 185, 1)',
+              //   lg: 'rgb(48, 42, 38)',
+              // }}
             >
               Фотография - это раскрытие своего творческого потенциала, душевных
               переживаний и эмоций в конкретный момент времени. Также она
@@ -292,7 +293,7 @@ function App() {
       <Stack
         direction={{ base: 'column', lg: 'row' }}
         id='portfolio'
-        minH='100vh' // устанавливает минимальную высоту элемента
+        minH={{ lg: '100vh' }} // устанавливает минимальную высоту элемента
         maxW='100vw' // Устанавливает ширину содержимого элемента
         px={{ base: '1em', lg: '5em' }} // заполнение встроенного начала + заполнение встроенного конца
         backgroundColor='rgb(48,42,38)'
@@ -333,7 +334,35 @@ function App() {
           }}
         ></Carousel>
       </Stack>
-      <Flex></Flex>
+      <Flex
+        id='reviews'
+        // direction='column' // расставляет в столбец эл флекса
+        minH='100vh' // устанавливает минимальную высоту элемента
+        maxW='100vw' // Устанавливает ширину содержимого элемента
+        px={{ base: '1em', lg: '5em' }} // заполнение встроенного начала + заполнение встроенного конца
+        backgroundImage={kirya}
+        backgroundRepeat='no-repeat'
+        backgroundSize='cover'
+        backgroundPosition={{ base: '45% ', lg: 'center' }}
+        alignItems='center'
+        justifyContent='center'
+      >
+        <Box
+          backgroundColor='rgba(202, 200, 185, 0.5)'
+          minH='75vh'
+          minW='75vw'
+          align='center'
+        >
+          <Heading
+            fontWeight='600'
+            size={{ base: 'xl', lg: '4xl' }}
+            color='rgba(202, 200, 185, 1)'
+            mt='0.2em'
+          >
+            Отзывы
+          </Heading>
+        </Box>
+      </Flex>
     </div>
   )
 }

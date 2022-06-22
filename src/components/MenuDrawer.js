@@ -17,7 +17,7 @@ export default function MenuDrawer({ btnRef, isDrawerOpen, onDrawerClose }) {
     { text: 'В начало', link: 'start' },
     { text: 'О фотографе', link: 'aboutMe' },
     { text: 'Портфолио', link: 'portfolio' },
-    { text: 'Отзывы', link: 'aboutMe' },
+    { text: 'Отзывы', link: 'reviews' },
     { text: 'Цены', link: 'aboutMe' },
     { text: 'Контакты', link: 'aboutMe' },
   ]
