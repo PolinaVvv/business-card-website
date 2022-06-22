@@ -38,7 +38,7 @@ import dust from '../assets/imgs/dust.jpg'
 import kiryaSits from '../assets/imgs/kirya_sits.jpg'
 import vasim from '../assets/imgs/vasim.jpg'
 import polina2 from '../assets/imgs/bulochka_sidit_ustavshaya_pod_pledikom.jpg'
-import kirya from '../assets/imgs/kirya.jpg'
+// import kirya from '../assets/imgs/kirya.jpg'
 
 function App() {
   const textMenu = [
@@ -210,7 +210,7 @@ function App() {
         pb='3em'
         style={{
           background:
-            'linear-gradient(rgba(202, 200, 185, 1)70%, rgb(48,42,38)  )',
+            'linear-gradient(rgba(202, 200, 185, 1)70%, rgb(48,42,38) )',
         }}
       >
         <Stack
@@ -275,10 +275,10 @@ function App() {
               За что я люблю фотографии?{' '}
             </Text>
             <Text
-              color={{
-                base: 'rgba(202, 200, 185, 1)',
-                lg: 'rgb(48, 42, 38)',
-              }}
+            // color={{
+            //   base: 'rgba(202, 200, 185, 1)',
+            //   lg: 'rgb(48, 42, 38)',
+            // }}
             >
               Фотография - это раскрытие своего творческого потенциала, душевных
               переживаний и эмоций в конкретный момент времени. Также она
@@ -333,6 +333,7 @@ function App() {
           }}
         ></Carousel>
       </Stack>
+      <Flex></Flex>
     </div>
   )
 }
