@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/business-card-website/static/css/main.51675c52.css",
-    "main.js": "/business-card-website/static/js/main.22d99190.js",
+    "main.js": "/business-card-website/static/js/main.fac3b13a.js",
     "static/media/bulochka_sidit_ustavshaya_pod_pledikom.jpg": "/business-card-website/static/media/bulochka_sidit_ustavshaya_pod_pledikom.de4375b2945f7ed71888.jpg",
     "static/media/church2.jpg": "/business-card-website/static/media/church2.d4e5eaebaee25496b6f0.jpg",
     "static/media/church1.jpg": "/business-card-website/static/media/church1.cec5dc295509f86a7fc5.jpg",
     "static/media/girl2.jpg": "/business-card-website/static/media/girl2.e31f6309f75b672c80c9.jpg",
     "static/media/vasim.jpg": "/business-card-website/static/media/vasim.f41746f0e3403c1bf87d.jpg",
+    "static/media/kirya.jpg": "/business-card-website/static/media/kirya.908a7f847a43b3171974.jpg",
     "static/media/dron.jpg": "/business-card-website/static/media/dron.a063fb21632eda9f96e2.jpg",
     "static/media/saypink.jpg": "/business-card-website/static/media/saypink.61af16b392e7cc204f60.jpg",
     "static/media/retro.jpg": "/business-card-website/static/media/retro.53042b73f8d96310fb53.jpg",
@@ -25,10 +26,10 @@
     "static/media/montserrat-vietnamese-400-normal.woff2": "/business-card-website/static/media/montserrat-vietnamese-400-normal.69611381dc5e4dd3b448.woff2",
     "index.html": "/business-card-website/index.html",
     "main.51675c52.css.map": "/business-card-website/static/css/main.51675c52.css.map",
-    "main.22d99190.js.map": "/business-card-website/static/js/main.22d99190.js.map"
+    "main.fac3b13a.js.map": "/business-card-website/static/js/main.fac3b13a.js.map"
   },
   "entrypoints": [
     "static/css/main.51675c52.css",
-    "static/js/main.22d99190.js"
+    "static/js/main.fac3b13a.js"
   ]
 }
