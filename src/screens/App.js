@@ -17,7 +17,7 @@ import { useRef } from 'react'
 
 // Componet
 import MenuDrawer from '../components/MenuDrawer'
-import Menu from '../components/Menu'
+import Menu from '../components/Menu2'
 
 // Fonts
 import '@fontsource/montserrat/400.css'

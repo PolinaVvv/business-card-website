@@ -10,7 +10,7 @@ import {
   Stack,
 } from '@chakra-ui/react'
 
-import Menu from './/Menu'
+import Menu from './/Menu2'
 
 export default function MenuDrawer({ btnRef, isDrawerOpen, onDrawerClose }) {
   const textMenu = [
