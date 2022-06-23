@@ -12,7 +12,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { Carousel } from 'react-carousel-minimal'
-import { HamburgerIcon, TriangleUpIcon } from '@chakra-ui/icons'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import { useRef } from 'react'
 
 // Componet
@@ -94,7 +94,7 @@ function App() {
         backgroundSize='cover'
         backgroundPosition={{ base: '27% ', lg: 'top' }}
       >
-        <IconButton
+        {/* <IconButton
           as='a'
           position='fixed'
           bottom={{ base: '0', lg: '3' }}
@@ -108,6 +108,25 @@ function App() {
           }
           size='lg'
           href='#start'
+        /> */}
+        <MenuDrawer isDrawerOpen={isOpen} onDrawerClose={onClose} />
+        <IconButton
+          // display={{ base: 'contents', lg: 'none' }}
+          id='iconMenu'
+          position='fixed'
+          top={{ base: '1.5', lg: '3' }}
+          right={{ base: '1.5', lg: '5' }}
+          variant='ghost'
+          icon={
+            <HamburgerIcon
+              boxSize={{ base: '1.5em', lg: '2em' }}
+              color='white'
+            />
+          }
+          // colorScheme='rgba(202, 200, 185, 1)'
+          size='lg'
+          ref={btnRef}
+          onClick={onOpen}
         />
         <Stack
           direction={{ base: 'column', lg: 'row' }}
@@ -134,7 +153,7 @@ function App() {
               @naitiphoto
             </Heading>
             <Spacer />
-            <MenuDrawer isDrawerOpen={isOpen} onDrawerClose={onClose} />
+            {/* <MenuDrawer isDrawerOpen={isOpen} onDrawerClose={onClose} />
             <IconButton
               display={{ base: 'contents', lg: 'none' }}
               variant='ghost'
@@ -145,7 +164,7 @@ function App() {
               size='lg'
               ref={btnRef}
               onClick={onOpen}
-            />
+            /> */}
           </Stack>
           <Stack
             direction='row'
@@ -300,7 +319,6 @@ function App() {
         align='center'
       >
         <Heading
-          paddingLeft='0.5em'
           fontWeight='700'
           size={{ base: 'xl', lg: '4xl' }}
           color='rgba(202, 200, 185, 1)'

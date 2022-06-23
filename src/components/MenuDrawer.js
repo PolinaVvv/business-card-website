@@ -12,6 +12,20 @@ import {
 
 import Menu from './/Menu2'
 
+const idMenu = document.getElementById('iconMenu')
+
+function magic() {
+  if (window.innerWidth > 991) {
+    if (window.pageYOffset > 75) {
+      idMenu.style.opacity = '1'
+    } else {
+      idMenu.style.opacity = '0'
+    }
+  } else idMenu.style.opacity = '1'
+}
+
+window.onscroll = magic
+
 export default function MenuDrawer({ btnRef, isDrawerOpen, onDrawerClose }) {
   const textMenu = [
     { text: 'В начало', link: 'start' },
@@ -31,12 +45,12 @@ export default function MenuDrawer({ btnRef, isDrawerOpen, onDrawerClose }) {
     >
       <DrawerOverlay />
       <DrawerContent bg='rgba(202, 200, 185, 0.9)'>
-        <DrawerCloseButton />
+        <DrawerCloseButton mt='0.5em' />
         <DrawerHeader>Меню</DrawerHeader>
 
         <DrawerBody>
           <Stack
-            direction={{ base: 'column', lg: 'row' }}
+            direction='column'
             fontWeight='300'
             spacing={{ base: '0.1em', lg: '0em' }}
             fontSize={{ base: 'xl', lg: '2xl' }}
