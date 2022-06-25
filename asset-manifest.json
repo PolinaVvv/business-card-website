@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/business-card-website/static/css/main.51675c52.css",
-    "main.js": "/business-card-website/static/js/main.44636821.js",
+    "main.js": "/business-card-website/static/js/main.2d4b4843.js",
     "static/media/bulochka_sidit_ustavshaya_pod_pledikom.jpg": "/business-card-website/static/media/bulochka_sidit_ustavshaya_pod_pledikom.de4375b2945f7ed71888.jpg",
     "static/media/church2.jpg": "/business-card-website/static/media/church2.d4e5eaebaee25496b6f0.jpg",
     "static/media/church1.jpg": "/business-card-website/static/media/church1.cec5dc295509f86a7fc5.jpg",
@@ -26,10 +26,10 @@
     "static/media/montserrat-vietnamese-400-normal.woff2": "/business-card-website/static/media/montserrat-vietnamese-400-normal.69611381dc5e4dd3b448.woff2",
     "index.html": "/business-card-website/index.html",
     "main.51675c52.css.map": "/business-card-website/static/css/main.51675c52.css.map",
-    "main.44636821.js.map": "/business-card-website/static/js/main.44636821.js.map"
+    "main.2d4b4843.js.map": "/business-card-website/static/js/main.2d4b4843.js.map"
   },
   "entrypoints": [
     "static/css/main.51675c52.css",
-    "static/js/main.44636821.js"
+    "static/js/main.2d4b4843.js"
   ]
 }
