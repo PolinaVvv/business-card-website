@@ -12,12 +12,13 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { Carousel } from 'react-carousel-minimal'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, TriangleUpIcon } from '@chakra-ui/icons'
 import { useRef } from 'react'
 
 // Componet
 import MenuDrawer from '../components/MenuDrawer'
 import Menu from '../components/Menu2'
+import TextSlider from '../components/Reviews'
 
 // Fonts
 import '@fontsource/montserrat/400.css'
@@ -94,8 +95,9 @@ function App() {
         backgroundSize='cover'
         backgroundPosition={{ base: '27% ', lg: 'top' }}
       >
-        {/* <IconButton
+        <IconButton
           as='a'
+          display={{ base: 'none', lg: 'flex' }}
           position='fixed'
           bottom={{ base: '0', lg: '3' }}
           right={{ base: '0', lg: '3' }}
@@ -108,13 +110,13 @@ function App() {
           }
           size='lg'
           href='#start'
-        /> */}
+        />
         <MenuDrawer isDrawerOpen={isOpen} onDrawerClose={onClose} />
         <IconButton
-          // display={{ base: 'contents', lg: 'none' }}
+          display={{ lg: 'none' }}
           id='iconMenu'
           position='fixed'
-          top={{ base: '1.5', lg: '3' }}
+          top={{ base: '5', lg: '3' }}
           right={{ base: '1.5', lg: '5' }}
           variant='ghost'
           icon={
@@ -374,11 +376,12 @@ function App() {
           <Heading
             fontWeight='600'
             size={{ base: 'xl', lg: '4xl' }}
-            color='rgba(202, 200, 185, 1)'
+            color='white'
             mt='0.2em'
           >
             Отзывы
           </Heading>
+          <TextSlider />
         </Box>
       </Flex>
     </div>

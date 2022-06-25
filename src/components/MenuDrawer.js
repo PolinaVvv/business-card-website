@@ -12,19 +12,19 @@ import {
 
 import Menu from './/Menu2'
 
-const idMenu = document.getElementById('iconMenu')
+// const idMenu = document.getElementById('iconMenu')
 
-function magic() {
-  if (window.innerWidth > 991) {
-    if (window.pageYOffset > 75) {
-      idMenu.style.opacity = '1'
-    } else {
-      idMenu.style.opacity = '0'
-    }
-  } else idMenu.style.opacity = '1'
-}
+// function magic() {
+//   if (window.innerWidth > 991) {
+//     if (window.pageYOffset > 75) {
+//       idMenu.style.opacity = '1'
+//     } else {
+//       idMenu.style.opacity = '0'
+//     }
+//   } else idMenu.style.opacity = '1'
+// }
 
-window.onscroll = magic
+// window.onscroll = magic
 
 export default function MenuDrawer({ btnRef, isDrawerOpen, onDrawerClose }) {
   const textMenu = [
