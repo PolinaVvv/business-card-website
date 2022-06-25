@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll'
 
-export default function Menu({ link, text }) {
+export default function Menu2({ link, text }) {
   return (
     <li style={{ cursor: 'pointer', listStyleType: 'none' }}>
       <Link

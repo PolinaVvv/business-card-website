@@ -12,7 +12,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { Carousel } from 'react-carousel-minimal'
-import { HamburgerIcon, TriangleUpIcon } from '@chakra-ui/icons'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import { useRef } from 'react'
 
 // Componet
@@ -95,7 +95,7 @@ function App() {
         backgroundSize='cover'
         backgroundPosition={{ base: '27% ', lg: 'top' }}
       >
-        <IconButton
+        {/* <IconButton
           as='a'
           display={{ base: 'none', lg: 'flex' }}
           position='fixed'
@@ -110,14 +110,13 @@ function App() {
           }
           size='lg'
           href='#start'
-        />
+        /> */}
         <MenuDrawer isDrawerOpen={isOpen} onDrawerClose={onClose} />
         <IconButton
-          display={{ lg: 'none' }}
           id='iconMenu'
           position='fixed'
-          top={{ base: '5', lg: '3' }}
-          right={{ base: '1.5', lg: '5' }}
+          top={{ base: '5', lg: '666' }}
+          right={{ base: '1.5', lg: '2' }}
           variant='ghost'
           icon={
             <HamburgerIcon
@@ -125,7 +124,6 @@ function App() {
               color='white'
             />
           }
-          // colorScheme='rgba(202, 200, 185, 1)'
           size='lg'
           ref={btnRef}
           onClick={onOpen}
@@ -155,18 +153,6 @@ function App() {
               @naitiphoto
             </Heading>
             <Spacer />
-            {/* <MenuDrawer isDrawerOpen={isOpen} onDrawerClose={onClose} />
-            <IconButton
-              display={{ base: 'contents', lg: 'none' }}
-              variant='ghost'
-              icon={
-                <HamburgerIcon boxSize='1.5em' color='rgba(202, 200, 185, 1)' />
-              }
-              colorScheme='pink'
-              size='lg'
-              ref={btnRef}
-              onClick={onOpen}
-            /> */}
           </Stack>
           <Stack
             direction='row'
@@ -295,13 +281,7 @@ function App() {
             <Text as='u' textAlign='left' pl={{ base: '2em', lg: '15em' }}>
               За что я люблю фотографии?{' '}
             </Text>
-            <Text
-              pb={{ base: '4em' }}
-              // color={{
-              //   base: 'rgba(202, 200, 185, 1)',
-              //   lg: 'rgb(48, 42, 38)',
-              // }}
-            >
+            <Text pb={{ base: '4em' }}>
               Фотография - это раскрытие своего творческого потенциала, душевных
               переживаний и эмоций в конкретный момент времени. Также она
               является зеркалом, отражающим всё то, что бережно хранится в
@@ -356,7 +336,6 @@ function App() {
       </Stack>
       <Flex
         id='reviews'
-        // direction='column' // расставляет в столбец эл флекса
         minH='100vh' // устанавливает минимальную высоту элемента
         maxW='100vw' // Устанавливает ширину содержимого элемента
         px={{ base: '1em', lg: '5em' }} // заполнение встроенного начала + заполнение встроенного конца
@@ -377,7 +356,8 @@ function App() {
             fontWeight='600'
             size={{ base: 'xl', lg: '4xl' }}
             color='white'
-            mt='0.2em'
+            mt='0.3em'
+            mb={{ base: '0.5em', lg: '0.2em' }}
           >
             Отзывы
           </Heading>
