@@ -1,4 +1,4 @@
-import { Button, Box, Stack, Text } from '@chakra-ui/react'
+import { Button, Box, Stack } from '@chakra-ui/react'
 import { useState } from 'react'
 
 export default function TextSlider() {
