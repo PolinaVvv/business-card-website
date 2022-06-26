@@ -36,7 +36,6 @@ export default function TextSlider() {
       direction={{ base: 'column', lg: 'row' }}
       spacing={{ base: '1em', lg: '2em' }} // интервал между к-либо элементами
     >
-      {/* <Spacer /> */}
       <Stack
         direction={{ base: 'row', lg: 'column' }}
         spacing={{ base: '1em', lg: '3em' }} // интервал между к-либо элементами

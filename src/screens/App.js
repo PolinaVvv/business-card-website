@@ -13,12 +13,14 @@ import {
 } from '@chakra-ui/react'
 import { Carousel } from 'react-carousel-minimal'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { FaInstagram, FaTelegramPlane } from 'react-icons/fa'
 import { useRef } from 'react'
 
 // Componet
 import MenuDrawer from '../components/MenuDrawer'
 import Menu from '../components/Menu2'
 import TextSlider from '../components/Reviews'
+import Price from '../components/PriceList'
 
 // Fonts
 import '@fontsource/montserrat/400.css'
@@ -46,8 +48,8 @@ function App() {
     { text: 'О фотографе', link: 'aboutMe' },
     { text: 'Портфолио', link: 'portfolio' },
     { text: 'Отзывы', link: 'reviews' },
-    { text: 'Цены', link: 'aboutMe' },
-    { text: 'Контакты', link: 'aboutMe' },
+    { text: 'Прайс', link: 'price' },
+    { text: 'Контакты', link: 'contacts' },
   ]
   const data = [
     { image: kiryaSmoke },
@@ -78,12 +80,28 @@ function App() {
   // позволяет сохранить некоторый объект, который можно можно изменять и который хранится в течение всей жизни компонента
   const btnRef = useRef()
 
+  const textPrice = [
+    {
+      heading: 'Творческая фотосессия',
+      text: 'Вместе реализуем Вашу яркую и необычную идею! Также можем воплотить одну из моих идей, т.к. для меня важно творчески реализовывать себя, и важно быть частью Ваших идей!',
+    },
+    {
+      heading: 'Life Style',
+      text: 'Прогулка совмещённая с фотосессией - что может быть лучше? Прогуляемся среди красивой архитектуры и интересных ландшафтов, зайдём в кафешку за классными кадрами и чашечкой кофе.',
+    },
+    {
+      heading: 'Групповая фотосессия',
+      text: 'Сделаю крутые снимки для друзей, влюблённых пар или коллектива! Если не можете выбрать локацию, то я подскажу хорошее место или студию. На таких снимках получается запечатлеть самые живые эмоции)',
+    },
+  ]
+
   return (
     <div
       style={{
         backgroundColor: 'rgba(202, 200, 185, 1)',
       }}
     >
+      {/* ГЛАВНАЯ */}
       <Flex
         id='start'
         direction='column' // расставляет в столбец эл флекса
@@ -175,6 +193,8 @@ function App() {
         >
           <Center flex='1' marginTop={{ lg: '4em' }}>
             <Button
+              align='center'
+              as='a'
               colorScheme='orange' // цвет при тыке
               variant='outline'
               borderColor='rgba(143, 91, 55, 1)'
@@ -187,6 +207,7 @@ function App() {
               fontSize='1.3em'
               width='210px'
               height='70px'
+              href='#contacts'
             >
               Записаться <br />
               на съёмку
@@ -208,6 +229,7 @@ function App() {
         </Stack>
         <Spacer />
       </Flex>
+      {/* О ФОТОГРАФЕ */}
       <Flex
         id='aboutMe'
         px={{ base: '1em', lg: '5em' }} // заполнение встроенного начала + заполнение встроенного конца
@@ -290,7 +312,7 @@ function App() {
           </Stack>
         </Stack>
       </Flex>
-
+      {/* ПОРТФОЛИО */}
       <Stack
         direction={{ base: 'column', lg: 'row' }}
         id='portfolio'
@@ -334,6 +356,7 @@ function App() {
           }}
         ></Carousel>
       </Stack>
+      {/* ОТЗЫВЫ */}
       <Flex
         id='reviews'
         minH='100vh' // устанавливает минимальную высоту элемента
@@ -364,6 +387,99 @@ function App() {
           <TextSlider />
         </Box>
       </Flex>
+      {/* ПРАЙС */}
+      <Stack
+        id='price'
+        minH='100vh'
+        style={{
+          background: 'linear-gradient(rgb(48,42,38), rgb(202, 200, 185) )',
+        }}
+        align='center'
+        px={{ base: '1em', lg: '5em' }}
+      >
+        <Heading
+          fontWeight='600'
+          size={{ base: 'xl', lg: '4xl' }}
+          color='rgb(202, 200, 185)'
+          mt='0.5em'
+          mb={{ base: '0.5em', lg: '0.4em' }}
+        >
+          Прайс
+        </Heading>
+        <Stack
+          direction={{ base: 'column', lg: 'row' }}
+          spacing={{ base: '1em', lg: '4em' }}
+        >
+          {textPrice.map((e) => (
+            <Price heading={e.heading} key={e} text={e.text} />
+          ))}
+        </Stack>
+      </Stack>
+      {/* КОНТАКТЫ */}
+
+      <Stack
+        id='contacts'
+        bg='CAC8B9'
+        px={{ base: '1em', lg: '5em' }}
+        align='center'
+        pb='2em'
+      >
+        <Heading
+          fontWeight='600'
+          size={{ base: 'xl', lg: '4xl' }}
+          color='rgb(48, 42, 38)'
+          mt='0.5em'
+          mb={{ base: '0.5em', lg: '0.4em' }}
+          align='center'
+        >
+          Контакты
+        </Heading>
+        <Stack
+          direction={{ base: 'column', lg: 'row' }}
+          fontSize={{ base: 'lg', lg: '2xl' }}
+          align='center'
+          // pl={{ lg: '5em' }}
+        >
+          <Text
+            fontSize={{ base: 'lg', lg: '2xl' }}
+            maxW={{ base: '80vw', lg: '50vw' }}
+            align={{ base: 'center', lg: 'start' }}
+          >
+            Для записи обращайтесь по номеру телефона, почте, телеграму или
+            инстраграму:
+          </Text>
+
+          <Stack
+            fontSize={{ base: 'md', lg: '2xl' }}
+            direction={{ base: 'row', lg: 'column' }}
+          >
+            <Text as='a' href='tel:+79777976218'>
+              8 (977)-797-62-18
+            </Text>
+            <Text as='a' href='mailto:naitiphoto@bk.ru'>
+              naitiphoto@bk.ru
+            </Text>
+          </Stack>
+          <Stack direction={{ base: 'row', lg: 'column' }}>
+            <IconButton
+              as='a'
+              target='_blank'
+              href='https://instagram.com/naitiphoto?igshid=YmMyMTA2M2Y='
+              fontSize='1.5em'
+              variant='ghost'
+              icon={<FaInstagram />}
+            ></IconButton>
+            <IconButton
+              as='a'
+              target='_blank'
+              href='https://t.me/frankwell'
+              fontSize='1.5em'
+              variant='ghost'
+              icon={<FaTelegramPlane />}
+            ></IconButton>
+          </Stack>
+        </Stack>
+      </Stack>
     </div>
   )
 }

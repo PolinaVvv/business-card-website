@@ -32,8 +32,8 @@ export default function MenuDrawer({ btnRef, isDrawerOpen, onDrawerClose }) {
     { text: 'О фотографе', link: 'aboutMe' },
     { text: 'Портфолио', link: 'portfolio' },
     { text: 'Отзывы', link: 'reviews' },
-    { text: 'Цены', link: 'aboutMe' },
-    { text: 'Контакты', link: 'aboutMe' },
+    { text: 'Прайс', link: 'price' },
+    { text: 'Контакты', link: 'contacts' },
   ]
   return (
     // положение ящика
