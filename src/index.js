@@ -8,24 +8,11 @@ import App from './screens/App'
 import Test from './screens/Test'
 import NotFound from './screens/NotFound'
 
-// Imgs
-// import legsAndFire from './assets/imgs/legs_and_fire2.jpg'
-
 const theme = extendTheme({
   fonts: {
     heading: `'Montserrat', sans-serif`,
     body: `'Montserrat', sans-serif`,
   },
-  // styles: {
-  //   global: {
-  //     body: {
-  //       backgroundRepeat: 'no-repeat',
-  //       backgroundImage: legsAndFire,
-  //       backgroundSize: 'cover',
-  //       backgroundPositionX: '30%',
-  //     },
-  //   },
-  // },
 })
 
 export default theme
